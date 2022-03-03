@@ -1,13 +1,12 @@
 import React from 'react';
 import './Cart.css';
-import f1 from '../../assets/img/featured1.png';
 import { GrClose } from 'react-icons/gr';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
 
 const Cart = ({ sidebar, closeSidebar }) => {
 	const cartItems = useSelector((state) => state.cart.items);
-	console.log(cartItems);
+	// console.log(cartItems);
 
 	const price = cartItems.reduce((prev, curr) => prev + curr.totalPrice, 0);
 

@@ -7,7 +7,7 @@ const HomeBanner = () => {
 		<>
 			<section className="home" id="home">
 				<div className="home__container container grid">
-					<div className="home__img-bg">
+					<div className="home__img-bg" id="bg__home">
 						<img src={Home} alt="" className="home__img" />
 					</div>
 
@@ -29,6 +29,7 @@ const HomeBanner = () => {
 						</h1>
 						<p className="home__description">
 							Latest arrival of the new imported watches of the B720 series,
+							<br />
 							with a modern and resistant design.
 						</p>
 						<span className="home__price">$1245</span>

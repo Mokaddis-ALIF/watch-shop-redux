@@ -1,6 +1,8 @@
 import React from 'react';
 import NewProductItem from './NewProductItem';
 import './NewProducts.css';
+import { productData } from '../Data/Data';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,57 +13,29 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper';
 
-const productData = [
-	{
-		id: 'p2',
-		price: 250,
-		name: 'Ingersoll',
-		img: 'https://i.ibb.co/3WGKfNZ/featured1.png',
-	},
-	{
-		id: 'p1',
-		price: 1050,
-		name: 'Jazzmaster',
-		img: 'https://i.ibb.co/3WGKfNZ/featured1.png',
-	},
-
-	{
-		id: 'p4',
-		price: 1500,
-		name: 'Spirit rose',
-		img: 'https://i.ibb.co/bLsfV7h/product1.png',
-	},
-	{
-		id: 'p3',
-		price: 890,
-		name: 'Rose gold',
-		img: 'https://i.ibb.co/41bf5b3/featured3.png',
-	},
-
-	{
-		id: 'p6',
-		price: 870,
-		name: 'Jubilee black',
-		img: 'https://i.ibb.co/bLsfV7h/product1.png',
-	},
-	{
-		id: 'p5',
-		price: 1350,
-		name: 'Khaki pilot',
-		img: 'https://i.ibb.co/bLsfV7h/product1.png',
-	},
-];
-
 const NewProducts = () => {
+	const data = productData.slice(5);
+
 	return (
 		<>
-			<section class="new section container" id="new">
-				<h2 class="section__title">New Arrivals</h2>
+			<section className="new section container" id="new">
+				<h2 className="section__title">New Arrivals</h2>
 
-				<div class="new__container">
-					<div class="swiper new-swiper">
+				<div className="new__container">
+					<div className="swiper new-swiper">
 						<Swiper
-							slidesPerView={3}
+							breakpoints={{
+								// when window width is >= 640px
+								640: {
+									width: 640,
+									slidesPerView: 1,
+								},
+								// when window width is >= 768px
+								998: {
+									width: 998,
+									slidesPerView: 3,
+								},
+							}}
 							spaceBetween={30}
 							pagination={{
 								clickable: true,
@@ -69,9 +43,9 @@ const NewProducts = () => {
 							modules={[Pagination]}
 							className="mySwiper"
 						>
-							{productData.map((product) => (
-								<SwiperSlide>
-									<NewProductItem key={product.id} product={product} />
+							{data.map((product) => (
+								<SwiperSlide key={product.id}>
+									<NewProductItem product={product} />
 								</SwiperSlide>
 							))}
 						</Swiper>

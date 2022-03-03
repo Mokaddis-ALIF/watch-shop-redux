@@ -1,37 +1,19 @@
 import React from 'react';
 import './Featured.css';
+import { productData } from '../Data/Data';
 
 import FeaturedProducts from './FeaturedProducts';
 
-const fData = [
-	{
-		id: 'p1',
-		price: 1050,
-		name: 'Jazzmaster',
-		img: 'https://i.ibb.co/3WGKfNZ/featured1.png',
-	},
-	{
-		id: 'p2',
-		price: 250,
-		name: 'Ingersoll',
-		img: 'https://i.ibb.co/3WGKfNZ/featured1.png',
-	},
-	{
-		id: 'p3',
-		price: 890,
-		name: 'Rose gold',
-		img: 'https://i.ibb.co/41bf5b3/featured3.png',
-	},
-];
-
 const Featured = () => {
+	const data = productData.slice(0, 3);
+
 	return (
 		<>
 			<section className="featured section container" id="featured">
 				<h2 className="section__title">Featured</h2>
 
 				<div className="featured__container grid">
-					{fData.map((p) => (
+					{data.map((p) => (
 						<FeaturedProducts key={p.id} p={p} />
 					))}
 					{/* <article className="featured__card">

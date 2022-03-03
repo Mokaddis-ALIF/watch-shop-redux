@@ -1,14 +1,27 @@
-.cart {
+/* .cart {
 	position: absolute;
 	background-color: var(--body-color);
 	z-index: var(--z-fixed);
 	top: 0;
 	right: 0;
-	height: 100vh;
+	height: 100%;
 	width: 350px;
 	transform: translateX(100%);
 	transition: all 0.4s;
 	padding: 2rem 2.5rem;
+} */
+
+.cart {
+	position: fixed;
+	background-color: var(--body-color);
+	z-index: var(--z-fixed);
+	width: 350px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	padding: 3.5rem 2rem;
+	transition: 0.4s;
+	overflow: auto;
 }
 
 .cart--open {

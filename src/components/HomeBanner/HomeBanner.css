@@ -1,8 +1,8 @@
 .home__container {
 	position: relative;
 	row-gap: 2.5rem;
-	margin-top: 2.5rem;
-	padding-top: 2.5rem;
+	margin-top: 2rem;
+	padding-top: 2rem;
 }
 
 .home__img {
@@ -12,7 +12,7 @@
 .home__img-bg {
 	background-color: var(--first-color);
 	width: 320px;
-	height: 570px;
+	height: 470px;
 	padding-bottom: 2rem;
 	display: flex;
 	justify-content: center;
@@ -20,8 +20,9 @@
 	justify-self: flex-end;
 	transform: translateX(1.5rem);
 	position: absolute;
-	top: -20%;
-	right: -10%;
+
+	/* top: -20%;
+	right: -10%; */
 }
 
 .home__social {
@@ -95,4 +96,11 @@
 
 .button--small {
 	padding: 1rem 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+	#bg__home,
+	.home__social {
+		visibility: hidden;
+	}
 }
